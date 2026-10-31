@@ -1296,176 +1296,434 @@
         }
 
         /* ============================================================
-           ABOUT US PAGE — NEW
+           ABOUT US PAGE — rebuilt (official founder + brand profile)
            ============================================================ */
-        .about-container {
-            max-width: 820px;
-            margin: 1.5rem auto 2rem;
-            padding: 0 0.5rem;
+        .ab {
+            max-width: 1080px;
+            margin: 1rem auto 2rem;
         }
 
-        .about-hero {
-            text-align: center;
-            padding: 1.5rem 0 2rem;
-        }
-        .about-hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -1.2px;
-            color: var(--text);
-        }
-        .about-hero h1 span {
-            color: var(--accent);
-        }
-        .about-hero p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            max-width: 640px;
-            margin: 0.5rem auto 0;
-            line-height: 1.7;
-        }
-
-        .about-section {
-            margin: 3rem 0;
-        }
-        .about-section .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        .about-section .section-sub {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            max-width: 700px;
-        }
-        .about-section .section-sub strong {
-            color: var(--text);
-        }
-
-        .about-grid-2 {
+        /* Hero: dark brand panel with the founder's banner photo */
+        .ab-hero {
+            position: relative;
+            overflow: hidden;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            grid-template-columns: minmax(0, 4.6fr) minmax(0, 7.4fr);
+            gap: 2.5rem;
+            align-items: center;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            background: #050d1a;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .about-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem 1.8rem;
-            box-shadow: var(--shadow);
-            transition: border-color 0.2s;
+        .ab-hero::before {
+            content: "";
+            position: absolute;
+            top: -35%;
+            right: -10%;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.28), transparent 68%);
+            pointer-events: none;
         }
-        .about-card:hover {
-            border-color: var(--accent);
+        .ab-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -45%;
+            left: -12%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 68%);
+            pointer-events: none;
         }
-        .about-card h4 {
-            font-size: 1.2rem;
+        .ab-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        .ab-hero h1 {
+            font-size: clamp(2.2rem, 4.2vw, 3.1rem);
+            font-weight: 700;
+            letter-spacing: -1.4px;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+        .ab-hero h1 span {
+            color: #7fb0ff;
+        }
+        .ab-hero p {
+            color: rgba(200, 215, 240, 0.82);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 30em;
+        }
+        .ab-hero figure {
+            position: relative;
+            margin: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #0a1628;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+        }
+        .ab-hero figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 30%;
+            display: block;
+        }
+        .ab-hero figcaption {
+            position: absolute;
+            left: 0.9rem;
+            bottom: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            padding: 0.55rem 0.9rem;
+            background: rgba(5, 13, 26, 0.62);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            font-size: 0.78rem;
+            line-height: 1.35;
+            color: rgba(210, 225, 245, 0.82);
+        }
+        .ab-hero figcaption strong {
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+            color: #fff;
+        }
+
+        /* Sections */
+        .ab-sec {
+            margin: 4.5rem 0;
+        }
+        .ab-title {
+            font-size: clamp(1.5rem, 2.6vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            line-height: 1.15;
             color: var(--text);
         }
-        .about-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .founder-card {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem 2.2rem;
-            box-shadow: var(--shadow);
-            margin-top: 1rem;
-        }
-        .founder-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: var(--accent-light);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: var(--accent);
-            flex-shrink: 0;
-        }
-        .founder-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-        .founder-info .role {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        .founder-info .age {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
-        }
-        .founder-info .bio {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-top: 0.6rem;
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.6rem 1.5rem;
-            margin-top: 0.8rem;
-        }
-        .feature-list li {
-            list-style: none;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .feature-list li::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            display: inline-block;
-            flex-shrink: 0;
-        }
-
-        .founder-message {
-            background: var(--surface2);
-            border-radius: var(--radius);
-            padding: 2rem 2.2rem;
-            border-left: 4px solid var(--accent);
-            margin-top: 1rem;
-        }
-        .founder-message p {
+        .ab-text {
             color: var(--text-secondary);
             font-size: 1rem;
             line-height: 1.8;
-            font-style: italic;
+            max-width: 40em;
         }
-        .founder-message .signature {
-            margin-top: 0.8rem;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--text);
+        #about-story-text {
+            white-space: pre-line;
+        }
+        .ab-split {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+            gap: 3rem;
+            align-items: start;
         }
 
+        /* Creator */
+        .ab-creator {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding: 1.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+        .ab-portrait {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .ab-creator h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.6px;
+            color: var(--text);
+        }
+        .ab-role {
+            margin-top: 0.15rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.98rem;
+        }
+        .ab-status {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.1rem;
+        }
+        .ab-creator .ab-text {
+            margin-top: 0.9rem;
+        }
+
+        /* Brand panel */
+        .ab-brand {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background: #050d1a;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ab-brand::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 68%);
+            pointer-events: none;
+        }
+        .ab-brand > * {
+            position: relative;
+            z-index: 1;
+        }
+        .ab-wordmark {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .ab-tagline {
+            margin-top: 0.35rem;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            color: rgba(190, 208, 235, 0.75);
+        }
+        .ab-brand-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.5rem;
+        }
+        .ab-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.3rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, transform 0.1s;
+        }
+        .ab-btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .ab-btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: scale(0.98);
+        }
+        .ab-btn-ghost {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .ab-btn-ghost:hover {
+            border-color: #7fb0ff;
+            color: #7fb0ff;
+        }
+
+        /* Intro film */
+        .ab-film {
+            position: relative;
+            margin-top: 1.5rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 1024 / 592;
+            background: #000;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+        }
+        .ab-film video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #000;
+        }
+        .ab-play {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(180deg, rgba(5, 13, 26, 0) 40%, rgba(5, 13, 26, 0.55));
+            transition: opacity 0.3s;
+        }
+        .ab-play .disc {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            transition: transform 0.25s, background 0.25s;
+        }
+        .ab-play:hover .disc {
+            transform: scale(1.07);
+            background: rgba(59, 130, 246, 0.75);
+        }
+        .ab-play svg {
+            width: 28px;
+            height: 28px;
+            margin-left: 4px;
+            fill: #fff;
+        }
+        .ab-play.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .ab-play:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: -4px;
+        }
+
+        /* Capabilities */
+        .ab-caps {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 0.7rem;
+            margin-top: 1.4rem;
+            list-style: none;
+        }
+        .ab-caps li {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.75rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .ab-caps li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* Three short statements */
+        .ab-trio {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2.5rem;
+            padding-top: 2.2rem;
+            border-top: 1px solid var(--border);
+        }
+        .ab-trio h3 {
+            font-size: 1.1rem;
+            font-weight: 650;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .ab-trio p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        /* Message */
+        .ab-quote {
+            margin-top: 1.5rem;
+            padding: 2.2rem;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+        }
+        .ab-quote blockquote p {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 42em;
+        }
+        .ab-sign {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-top: 1.5rem;
+        }
+        .ab-sign img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+        .ab-sign strong {
+            display: block;
+            font-weight: 650;
+            color: var(--text);
+        }
+        .ab-sign span {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        /* Social links */
+        .ab-social {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        .ab-social a {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.85rem 1.1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s, transform 0.15s;
+        }
+        .ab-social a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .ab-social svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Contact */
+        .ab-contact {
+            text-align: center;
+            padding-top: 2.2rem;
+            border-top: 1px solid var(--border);
+        }
+        .ab-contact p {
+            color: var(--text-secondary);
+            margin-bottom: 0.9rem;
+        }
         .about-support-btn {
             display: inline-flex;
             align-items: center;
@@ -1480,7 +1738,6 @@
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
             text-decoration: none;
-            margin-top: 0.5rem;
         }
         .about-support-btn:hover {
             background: var(--accent-secondary);
@@ -1490,6 +1747,55 @@
             width: 20px;
             height: 20px;
             fill: currentColor;
+        }
+
+        @media (max-width: 900px) {
+            .ab-hero {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+                padding: 1.5rem;
+            }
+            .ab-hero figure {
+                order: -1;
+            }
+            .ab-split {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .ab-creator {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .ab-portrait {
+                max-width: 300px;
+            }
+            .ab-trio {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+            }
+            .ab-sec {
+                margin: 3.25rem 0;
+            }
+        }
+        @media (max-width: 500px) {
+            .ab-hero {
+                padding: 1rem;
+                border-radius: 20px;
+            }
+            .ab-hero figure {
+                aspect-ratio: 4 / 3;
+            }
+            .ab-creator,
+            .ab-brand,
+            .ab-quote {
+                padding: 1.25rem;
+            }
+            .ab-quote blockquote p {
+                font-size: 1rem;
+            }
+            .ab-social {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         /* ============================================================
@@ -1535,9 +1841,6 @@
             #zishu-chat-container {
                 max-height: 360px;
                 min-height: 180px;
-            }
-            .about-hero h1 {
-                font-size: 2.4rem;
             }
         }
 
@@ -1660,24 +1963,6 @@
                 padding: 0.8rem 1.5rem;
                 min-width: 100px;
                 font-size: 1rem;
-            }
-            .about-hero h1 {
-                font-size: 2rem;
-            }
-            .about-grid-2 {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .founder-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.8rem;
-            }
-            .feature-list {
-                grid-template-columns: 1fr;
-            }
-            .founder-message {
-                padding: 1.5rem;
             }
         }
 
@@ -1816,26 +2101,6 @@
             .language-btn {
                 width: 100%;
                 max-width: 250px;
-            }
-            .about-hero h1 {
-                font-size: 1.6rem;
-            }
-            .about-hero p {
-                font-size: 1rem;
-            }
-            .about-section .section-title {
-                font-size: 1.6rem;
-            }
-            .founder-card {
-                padding: 1.2rem;
-            }
-            .founder-avatar {
-                width: 70px;
-                height: 70px;
-                font-size: 1.8rem;
-            }
-            .founder-info h3 {
-                font-size: 1.2rem;
             }
             .customer-support-email-btn {
                 font-size: 0.95rem;
@@ -2078,76 +2343,90 @@
         </div>
 
         <!-- ============================================================
-        ABOUT US PAGE — NEW
+        ABOUT US PAGE — rebuilt (official founder + brand profile)
         ============================================================ -->
         <div id="about-page">
-            <div class="about-container">
+            <div class="ab">
 
                 <!-- Hero -->
-                <div class="about-hero">
-                    <h1>About <span>Zishu</span></h1>
-                    <p id="about-hero-desc">Zishu is an AI voice assistant created to make interacting with technology feel more natural, simple and personal.</p>
-                </div>
+                <section class="ab-hero">
+                    <div>
+                        <h1>About <span>Zishu</span></h1>
+                        <p id="about-hero-desc">Zishu is an AI voice assistant created to make interacting with technology feel more natural, simple and personal.</p>
+                    </div>
+                    <figure>
+                        <img src="./zishan_zishutron_banner.png" width="1672" height="941" decoding="async"
+                             alt="Official portrait of Zishan, Founder and Developer of ZISHU TRON, seated at his desk in front of a monitor showing the ZISHU TRON logo." />
+                        <figcaption><strong>Zishan</strong>Founder &amp; Developer, Zishu Tron</figcaption>
+                    </figure>
+                </section>
 
                 <!-- The Story -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-story-title">The Story Behind Zishu</h2>
-                    <p class="section-sub" id="about-story-text">
-                        Zishu was created from the idea of building a voice assistant that feels simple and natural to use.
-                        Instead of creating an experience that feels complicated or overwhelming, the goal was to make an assistant
-                        that users can simply open, interact with and talk to.
-                        <br><br>
-                        The project has been developed progressively, with continuous improvements to:
-                        <strong>voice interaction, AI conversations, user experience, multilingual support, responsive design,
-                        assistant tools, accessibility, and overall reliability.</strong>
-                    </p>
-                </div>
+                <section class="ab-sec ab-split">
+                    <h2 class="ab-title" id="about-story-title">The Story Behind Zishu</h2>
+                    <p class="ab-text" id="about-story-text">Zishu was created from the idea of building a voice assistant that feels simple and natural to use. Instead of creating an experience that feels complicated or overwhelming, the goal was to make an assistant that users can simply open, interact with and talk to.
 
-                <!-- Founder & Brand -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-founder-title">Meet the Creator</h2>
-                    <div class="founder-card">
-                        <div class="founder-avatar">Z</div>
-                        <div class="founder-info">
+The project has been developed progressively, with continuous improvements to: voice interaction, AI conversations, user experience, multilingual support, responsive design, assistant tools, accessibility, and overall reliability.</p>
+                </section>
+
+                <!-- Creator -->
+                <section class="ab-sec">
+                    <h2 class="ab-title" id="about-founder-title">Meet the Creator</h2>
+                    <div class="ab-creator">
+                        <img class="ab-portrait" src="./zishan_zishutron_logo.png" width="1536" height="1536" loading="lazy" decoding="async"
+                             alt="Zishan, Founder and Developer of ZISHU TRON." />
+                        <div>
                             <h3>Zishan</h3>
-                            <div class="role">Founder &amp; Developer · Zishu Tron</div>
-                            <div class="role">Status: Student</div>
-
-                            <div class="bio" id="about-founder-bio">
-                                Zishu is independently created and developed by Zishan, the founder and developer behind Zishu Tron.
-                                The project is being built with a focus on learning, experimentation, product development and creating useful technology.
-                            </div>
+                            <div class="ab-role">Founder &amp; Developer · Zishu Tron</div>
+                            <div class="ab-status">Status: Student</div>
+                            <p class="ab-text" id="about-founder-bio">Zishu is independently created and developed by Zishan, the founder and developer behind Zishu Tron. The project is being built with a focus on learning, experimentation, product development and creating useful technology.</p>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Zishu Tron -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-brand-title">Built by Zishu Tron</h2>
-                    <p class="section-sub" id="about-brand-text">
-                        Zishu Tron is the creative technology brand behind Zishu. The project focuses on building modern digital products
-                        and experimenting with new ways technology can become more useful and accessible.
-                    </p>
-                </div>
+                <!-- Intro film -->
+                <section class="ab-sec">
+                    <h2 class="ab-title" id="about-film-title">The vision behind ZISHU TRON</h2>
+                    <p class="ab-text" style="margin-top:0.6rem;" id="about-film-desc">A short introduction to the creator and the brand.</p>
+                    <div class="ab-film">
+                        <video id="aboutVideo" preload="none" playsinline controlslist="nodownload"
+                               poster="./zishan_founder_intro_poster.jpg" width="1024" height="592"
+                               aria-label="Short introduction film: The vision behind ZISHU TRON">
+                            <source src="./zishan_founder_intro.mp4" type="video/mp4" />
+                        </video>
+                        <button class="ab-play" id="aboutPlayBtn" aria-label="Play introduction film">
+                            <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Brand -->
+                <section class="ab-sec ab-split">
+                    <div>
+                        <h2 class="ab-title" id="about-brand-title">Built by Zishu Tron</h2>
+                        <p class="ab-text" id="about-brand-text" style="margin-top:1rem;">Zishu Tron is the creative technology brand behind Zishu. The project focuses on building modern digital products and experimenting with new ways technology can become more useful and accessible.</p>
+                    </div>
+                    <div class="ab-brand">
+                        <div class="ab-wordmark">ZISHU TRON</div>
+                        <div class="ab-tagline">IDEAS TODAY. INNOVATION TOMORROW.</div>
+                        <div class="ab-brand-links">
+                            <a class="ab-btn ab-btn-primary" href="https://zishutron.zishuai.cloud/" target="_blank" rel="noopener" id="about-brand-visit">Visit ZISHU TRON</a>
+                            <a class="ab-btn ab-btn-ghost" href="https://zishutron.zishuai.cloud/developer.html" target="_blank" rel="noopener" id="about-brand-dev">Developer profile</a>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- Vision -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-vision-title">Our Vision</h2>
-                    <p class="section-sub" id="about-vision-text">
-                        Technology should feel useful, simple and accessible. The long-term vision for Zishu is to continue improving the assistant
-                        so that interacting with AI becomes easier and more natural for everyday users. Future goals include better voice interaction,
-                        more natural conversations, support for more languages, useful assistant capabilities, better personalization,
-                        improved accessibility, and continuous product improvement.
-                    </p>
-                </div>
+                <section class="ab-sec ab-split">
+                    <h2 class="ab-title" id="about-vision-title">Our Vision</h2>
+                    <p class="ab-text" id="about-vision-text">Technology should feel useful, simple and accessible. The long-term vision for Zishu is to continue improving the assistant so that interacting with AI becomes easier and more natural for everyday users. Future goals include better voice interaction, more natural conversations, support for more languages, useful assistant capabilities, better personalization, improved accessibility, and continuous product improvement.</p>
+                </section>
 
-                <!-- What Zishu Can Do -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-capabilities-title">What Zishu Can Do</h2>
-                    <p class="section-sub" style="margin-bottom:0.5rem;" id="about-capabilities-desc">
-                        Zishu is designed to help you with everyday tasks using voice and text.
-                    </p>
-                    <ul class="feature-list" id="about-capabilities-list">
+                <!-- Capabilities -->
+                <section class="ab-sec">
+                    <h2 class="ab-title" id="about-capabilities-title">What Zishu Can Do</h2>
+                    <p class="ab-text" style="margin-top:0.6rem;" id="about-capabilities-desc">Zishu is designed to help you with everyday tasks using voice and text.</p>
+                    <ul class="ab-caps" id="about-capabilities-list">
                         <li>Voice interaction</li>
                         <li>Text-based conversations</li>
                         <li>AI-powered answers</li>
@@ -2159,53 +2438,54 @@
                         <li>Reminders</li>
                         <li>Website assistance</li>
                     </ul>
-                </div>
+                </section>
 
-                <!-- Designed for Every Screen -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-responsive-title">Designed for Every Screen</h2>
-                    <p class="section-sub" id="about-responsive-text">
-                        Zishu is designed to work across mobile, tablet, laptop, and desktop. The interface remains clean,
-                        responsive and easy to use across different screen sizes.
-                    </p>
-                </div>
-
-                <!-- Multilingual Vision -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-multilingual-title">Made for More Users</h2>
-                    <p class="section-sub" id="about-multilingual-text">
-                        Zishu is being designed to support users across different languages. Multilingual accessibility is
-                        an important part of the project's direction. Currently, the interface supports English and Hindi.
-                    </p>
-                </div>
-
-                <!-- Continuous Development -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-growth-title">Still Growing</h2>
-                    <p class="section-sub" id="about-growth-text">
-                        Zishu is continuously being improved. New ideas, improvements and capabilities are being explored
-                        as the project grows.
-                    </p>
-                </div>
-
-                <!-- Founder Message -->
-                <div class="about-section">
-                    <h2 class="section-title" id="about-message-title">A Message from the Creator</h2>
-                    <div class="founder-message">
-                        <p id="about-message-text">
-                            Zishu started as an idea to build something useful and has grown into an ongoing project focused on AI,
-                            voice interaction and better digital experiences. My goal is to keep learning, building and improving
-                            Zishu step by step while creating technology that people can actually enjoy using.
-                        </p>
-                        <div class="signature">— Zishan<br>Founder &amp; Developer, Zishu Tron</div>
+                <!-- Screens, languages, growth -->
+                <section class="ab-sec ab-trio">
+                    <div>
+                        <h3 id="about-responsive-title">Designed for Every Screen</h3>
+                        <p id="about-responsive-text">Zishu is designed to work across mobile, tablet, laptop, and desktop. The interface remains clean, responsive and easy to use across different screen sizes.</p>
                     </div>
-                </div>
+                    <div>
+                        <h3 id="about-multilingual-title">Made for More Users</h3>
+                        <p id="about-multilingual-text">Zishu is being designed to support users across different languages. Multilingual accessibility is an important part of the project's direction. Currently, the interface supports English and Hindi.</p>
+                    </div>
+                    <div>
+                        <h3 id="about-growth-title">Still Growing</h3>
+                        <p id="about-growth-text">Zishu is continuously being improved. New ideas, improvements and capabilities are being explored as the project grows.</p>
+                    </div>
+                </section>
+
+                <!-- Message from the creator -->
+                <section class="ab-sec">
+                    <h2 class="ab-title" id="about-message-title">A Message from the Creator</h2>
+                    <div class="ab-quote">
+                        <blockquote>
+                            <p id="about-message-text">Zishu started as an idea to build something useful and has grown into an ongoing project focused on AI, voice interaction and better digital experiences. My goal is to keep learning, building and improving Zishu step by step while creating technology that people can actually enjoy using.</p>
+                        </blockquote>
+                        <div class="ab-sign">
+                            <img src="./zishan_zishutron_logo.png" width="52" height="52" loading="lazy" decoding="async" alt="Zishan, Founder and Developer of ZISHU TRON." />
+                            <div><strong>Zishan</strong><span>Founder &amp; Developer, Zishu Tron</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Official profiles -->
+                <section class="ab-sec">
+                    <h2 class="ab-title" id="about-connect-title">Follow the journey</h2>
+                    <p class="ab-text" style="margin-top:0.6rem;" id="about-connect-desc">Official profiles of the creator and Zishu Tron.</p>
+                    <div class="ab-social">
+                        <a href="https://github.com/zishutron" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+                        <a href="https://discord.gg/Xhh5r2UM5C" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.74 19.74 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.1 13.1 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 01.078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 01.079.009c.12.1.245.199.372.293a.077.077 0 01-.006.127 12.3 12.3 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Discord</a>
+                        <a href="https://x.com/zishanstardust" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
+                        <a href="https://youtube.com/@zishutron" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+                        <a href="https://www.linkedin.com/in/zishutron" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    </div>
+                </section>
 
                 <!-- Contact / Support -->
-                <div class="about-section" style="text-align:center; border-top:1px solid var(--border); padding-top:2rem;">
-                    <p style="color:var(--text-secondary); margin-bottom:0.8rem;" id="about-support-desc">
-                        Have questions or feedback? We're here to help.
-                    </p>
+                <div class="ab-contact">
+                    <p id="about-support-desc">Have questions or feedback? We're here to help.</p>
                     <button class="about-support-btn" id="aboutSupportBtn">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                             <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 14H4V4h16v12z"/>
@@ -2314,6 +2594,12 @@
                     'about-message-title': 'A Message from the Creator',
                     'about-message-text': 'Zishu started as an idea to build something useful and has grown into an ongoing project focused on AI, voice interaction and better digital experiences. My goal is to keep learning, building and improving Zishu step by step while creating technology that people can actually enjoy using.',
                     'about-support-desc': 'Have questions or feedback? We\'re here to help.',
+                    'about-connect-title': 'Follow the journey',
+                    'about-film-title': 'The vision behind ZISHU TRON',
+                    'about-film-desc': 'A short introduction to the creator and the brand.',
+                    'about-connect-desc': 'Official profiles of the creator and Zishu Tron.',
+                    'about-brand-visit': 'Visit ZISHU TRON',
+                    'about-brand-dev': 'Developer profile',
                 },
                 hi: {
                     // Nav
@@ -2378,6 +2664,12 @@
                     'about-message-title': 'निर्माता का संदेश',
                     'about-message-text': 'Zishu कुछ उपयोगी बनाने के विचार से शुरू हुआ और AI, वॉइस इंटरैक्शन और बेहतर डिजिटल अनुभवों पर केंद्रित एक चल रही परियोजना में विकसित हुआ है। मेरा लक्ष्य सीखते रहना, निर्माण करते रहना और Zishu को चरण-दर-चरण सुधारते रहना है, साथ ही ऐसी तकनीक बनाना जिसका उपयोग लोग वास्तव में आनंद के साथ कर सकें।',
                     'about-support-desc': 'कोई सवाल या सुझाव? हम मदद के लिए यहाँ हैं।',
+                    'about-connect-title': 'यात्रा से जुड़ें',
+                    'about-film-title': 'ZISHU TRON के पीछे की सोच',
+                    'about-film-desc': 'निर्माता और ब्रांड का एक छोटा परिचय।',
+                    'about-connect-desc': 'निर्माता और Zishu Tron के आधिकारिक प्रोफ़ाइल।',
+                    'about-brand-visit': 'ZISHU TRON पर जाएँ',
+                    'about-brand-dev': 'डेवलपर प्रोफ़ाइल',
                 }
             };
 
@@ -2435,6 +2727,12 @@
                     'about-message-title': 'about-message-title',
                     'about-message-text': 'about-message-text',
                     'about-support-desc': 'about-support-desc',
+                    'about-connect-title': 'about-connect-title',
+                    'about-film-title': 'about-film-title',
+                    'about-film-desc': 'about-film-desc',
+                    'about-connect-desc': 'about-connect-desc',
+                    'about-brand-visit': 'about-brand-visit',
+                    'about-brand-dev': 'about-brand-dev',
                 };
 
                 Object.keys(idMap).forEach(id => {
@@ -2589,6 +2887,8 @@
             const exploreUseBtn = document.getElementById('exploreUseZishuBtn');
 
             function switchPage(page) {
+                const aboutVid = document.getElementById('aboutVideo');
+                if (aboutVid && page !== 'about' && !aboutVid.paused) aboutVid.pause();
                 // Hide all
                 homePage.style.display = 'none';
                 explorePage.style.display = 'none';
@@ -2669,6 +2969,25 @@
             } else {
                 window.addEventListener('load', handleHash);
             }
+
+            // About intro film: click-to-play, native controls once playing
+            (function aboutFilm() {
+                const v = document.getElementById('aboutVideo');
+                const btn = document.getElementById('aboutPlayBtn');
+                if (!v || !btn) return;
+                btn.addEventListener('click', function() {
+                    v.setAttribute('controls', '');
+                    v.preload = 'auto';
+                    const p = v.play();
+                    if (p && p.catch) p.catch(function() {});
+                    btn.classList.add('hidden');
+                });
+                v.addEventListener('ended', function() {
+                    v.removeAttribute('controls');
+                    v.load();
+                    btn.classList.remove('hidden');
+                });
+            })();
 
             // FAQ accordion
             document.querySelectorAll('.faq-item').forEach(item => {
