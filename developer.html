@@ -711,7 +711,7 @@
         return;
       }
       var html = "";
-      list.forEach(function(p){
+      list.slice(0,6).forEach(function(p){
         var url = p.url || "#";
         var iconHtml = p.icon
           ? '<img src="'+esc(p.icon)+'" alt="" loading="lazy" width="46" height="46" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot;><rect x=&quot;3&quot; y=&quot;3&quot; width=&quot;18&quot; height=&quot;18&quot; rx=&quot;3&quot;/></svg>\';" />'
